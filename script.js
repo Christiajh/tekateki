@@ -79,16 +79,16 @@ const questions = [
         correctAnswer: 0 // Semua anggota klub adalah anggota perpustakaan
     },
     {
-        question: "Sebagai seorang ahli strategi militer, Anda berhadapan dengan situasi di mana dua negara tengah berselisih perbatasan. Satu negara memiliki kekuatan militer yang jauh lebih besar dan meminta negosiasi untuk mendapatkan kontrol penuh atas wilayah yang disengketakan. Negara lain bersikeras untuk menyelesaikan sengketa ini dengan perundingan damai. Bagaimana Anda akan menyarankan kedua negara untuk menyelesaikan konflik ini?",
+        question: "Dua peluru ditembakkan pada waktu yang sama dari senjata yang berbeda, dengan kecepatan yang sama. Anehnya, peluru pertama jatuh ke tanah lebih cepat daripada peluru kedua. Mengapa hal ini bisa terjadi?",
         options: [
-            "Mengusulkan negosiasi langsung untuk menyerahkan kontrol wilayah kepada negara yang lebih kuat militer",
-            "Mendorong negara yang lebih kuat untuk mengakui hak kedaulatan negara lain atas wilayah tersebut",
-            "Menyarankan penyelesaian melalui pertempuran terbuka untuk menentukan pemenangnya",
-            "Mengusulkan mediasi internasional untuk menengahi perselisihan ini",
-            "Mengembangkan solusi kompromi yang dapat diterima kedua belah pihak"
+            "Peluru pertama lebih berat daripada peluru kedua",
+            "Peluru kedua mengalami gesekan udara yang lebih sedikit",
+            "Senjata pertama ditembakkan dari ketinggian yang lebih rendah",
+            "Peluru pertama mengalami hambatan udara yang lebih besar"
         ],
-        correctAnswer: 4 // Mengembangkan solusi kompromi yang dapat diterima kedua belah pihak
-    },
+        correctAnswer: 4 // Peluru pertama mengalami hambatan udara yang lebih besar
+    }
+    ,
     {
         question: "Sebagai seorang pengusaha sukses, Anda menghadapi pilihan antara memperluas bisnis Anda ke pasar internasional dengan potensi keuntungan besar tetapi risiko keuangan yang tinggi, atau mempertahankan operasi domestik yang stabil tetapi dengan pertumbuhan yang terbatas. Bagaimana Anda akan mengevaluasi dan memilih langkah terbaik untuk bisnis Anda?",
         options: [
@@ -123,9 +123,14 @@ const questions = [
         correctAnswer: 2 // Berkolaborasi dengan tim arsitek untuk menggabungkan elemen estetika dan fungsionalitas yang optimal
     },
     {
-        question: "Jika hanya beberapa guru di sekolah yang mengajar matematika, dan semua guru yang mengajar matematika juga mengajar fisika, maka mana yang benar?",
-        options: ["Semua guru di sekolah mengajar fisika", "Semua guru yang mengajar fisika juga mengajar matematika", "Beberapa guru di sekolah mengajar fisika", "Tidak ada guru di sekolah yang mengajar fisika"],
-        correctAnswer: 2 // Beberapa guru di sekolah mengajar fisika
+        question: "Di sebuah laboratorium penelitian, hanya beberapa ilmuwan yang memiliki akses ke perangkat eksperimen tertentu. Setiap ilmuwan yang memiliki akses ke perangkat eksperimen tertentu juga memiliki latar belakang pendidikan dalam bidang fisika kuantum. Berdasarkan informasi ini, mana yang pasti benar?",
+        options: [
+            "Semua ilmuwan di laboratorium memiliki latar belakang pendidikan dalam bidang fisika kuantum",
+            "Semua ilmuwan yang memiliki latar belakang pendidikan dalam bidang fisika kuantum juga memiliki akses ke perangkat eksperimen tertentu",
+            "Beberapa ilmuwan di laboratorium memiliki akses ke perangkat eksperimen tertentu",
+            "Tidak ada ilmuwan di laboratorium yang memiliki latar belakang pendidikan dalam bidang fisika kuantum"
+        ],
+        correctAnswer: 2 // Beberapa ilmuwan di laboratorium memiliki akses ke perangkat eksperimen tertentu
     },
     {
         question: "Saya selalu di depanmu tetapi tidak bisa kamu lihat. Saya datang setiap hari tetapi tidak pernah tinggal. Siapakah saya?",
@@ -394,8 +399,8 @@ function submitAnswer() {
             }, 1000); // Tunggu 1 detik sebelum pindah ke soal berikutnya
         } else {
             attempts++;
-            if (attempts >= 3) { // Perubahan di sini untuk 3 kali salah
-                alert("Anda telah menjawab salah tiga kali. Kembali ke soal pertama.");
+            if (attempts >= 2) { // Perubahan di sini untuk 3 kali salah
+                alert("Anda telah menjawab salah dua kali. Kembali ke soal pertama.");
                 currentQuestionIndex = 0;
                 attempts = 0;
                 loadQuestion();
