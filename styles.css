@@ -1,0 +1,97 @@
+/* styles.css */
+
+body {
+    background-color: #f0f0f0; /* warna latar belakang */
+    overflow: hidden; /* agar animasi tidak mempengaruhi scroll */
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    background: linear-gradient(-45deg, #FFD700, #FF69B4, #87CEFA, #32CD32);
+    background-size: 400% 400%;
+    animation: moveGradient 100s linear infinite;
+}
+
+
+button {
+    padding: 6px 12px; /* Padding agar tombol lebih lebar */
+    font-size: 18px; /* Ukuran font */
+    font-weight: bold; /* Ketebalan font */
+    border: none; /* Menghilangkan border */
+    border-radius: 8px; /* Sudut lengkung */
+    cursor: pointer; /* Kursor menunjukkan interaktif */
+}
+
+/* Gaya khusus untuk tombol Kirim */
+#submit-btn {
+    background-color: #3498db; /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+    margin-right: 12px; /* Jarak kanan */
+}
+
+/* Gaya khusus untuk tombol Berikutnya */
+#next-btn {
+    background-color: #2ecc71; /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+}
+
+/* Efek hover untuk tombol */
+button:hover {
+    opacity: 0.8; /* Mengurangi opasitas saat dihover */
+}
+
+/* styles.css */
+
+/* Gaya umum untuk tombol pilihan */
+.choice-btn {
+    display: block; /* Mengubah menjadi elemen blok untuk memungkinkan pengaturan ukuran */
+    width: 100%; /* Lebar tombol mengisi kontainer */
+    padding: 16px; /* Padding untuk memperbesar tombol */
+    margin-bottom: 12px; /* Jarak antar tombol */
+    font-size: 18px; /* Ukuran font */
+    font-weight: bold; /* Ketebalan font */
+    text-align: center; /* Pusatkan teks */
+    border: none; /* Menghilangkan border */
+    border-radius: 8px; /* Sudut lengkung */
+    cursor: pointer; /* Kursor menunjukkan interaktif */
+    background-color: #3498db; /* Warna latar belakang default */
+    color: #fff; /* Warna teks default */
+    transition: background-color 0.3s, transform 0.1s; /* Transisi perubahan warna latar belakang */
+}
+
+/* Efek hover untuk tombol pilihan */
+.choice-btn:hover {
+    background-color: #2980b9; /* Warna latar belakang saat dihover */
+    transform: scale(1.05); /* Memperbesar tombol sedikit saat dihover */
+}
+
+/* Gaya khusus untuk tombol pilihan */
+.choice-btn:nth-child(2) {
+    background-color: #2ecc71; /* Warna latar belakang untuk pilihan kedua */
+}
+
+.choice-btn:nth-child(3) {
+    background-color: #e74c3c; /* Warna latar belakang untuk pilihan ketiga */
+}
+
+.choice-btn:nth-child(4) {
+    background-color: #f39c12; /* Warna latar belakang untuk pilihan keempat */
+}

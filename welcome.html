@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Selamat Datang</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-text">
+            <h1 id="welcomeMessage"></h1>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const username = localStorage.getItem('username');
+            const welcomeMessage = document.getElementById('welcomeMessage');
+            let message = 'Selamat datang ';
+            if (username) {
+                message += ` ${username.split(' ')[0]}, Kerjakan tiap soal dan kumpulkan point untuk masuk ke level selanjutnya yang lebih menantang`;
+            } else {
+                message += ', Kerjakan tiap soal dan ketika anda salah menjawab sebanyak tiga kali setiap soal maka soal akan kembali ke soal awal';
+            }
+            
+            let index = 0;
+            
+            function typeWriter() {
+                if (index < message.length) {
+                    welcomeMessage.innerHTML += message.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, 50);
+                } else {
+                    setTimeout(() => {
+                        welcomeMessage.style.opacity = '0';
+                        setTimeout(() => {
+                            window.location.href = 'new.html';
+                        }, 1000); // Tunda selama 1 detik sebelum berpindah halaman
+                    }, 1000); // Tunda selama 1 detik sebelum menghilangkan teks
+                }
+            }
+            
+            typeWriter();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Detektif</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* CSS styles */
+    body {
+        background-color: #f0f0f0; /* Warna latar belakang */
+        overflow: hidden; /* agar animasi tidak mempengaruhi scroll */
+    }
+
+    .hidden {
+        display: none; /* Sembunyikan elemen dengan kelas hidden */
+    }
+
+    button {
+        padding: 12px 24px; /* Padding agar tombol lebih lebar */
+        font-size: 18px; /* Ukuran font */
+        font-weight: bold; /* Ketebalan font */
+        border: none; /* Menghilangkan border */
+        border-radius: 8px; /* Sudut lengkung */
+        cursor: pointer; /* Kursor menunjukkan interaktif */
+    }
+
+    #submit-btn {
+        background-color: #3498db; /* Warna latar belakang */
+        color: #fff; /* Warna teks */
+    }
+</style>
+<body>
+<div id="question-container"></div>
+<div id="attempts-container" class="attempts"></div>
+<button id="submit-btn">Kirim</button>
+
+<div id="result" class="hidden"></div>
+<div id="loading" class="hidden">Memuat...</div>
+
+<script src="script.js"></script>
+</body>
+</html>
