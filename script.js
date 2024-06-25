@@ -1,335 +1,858 @@
 const questions = [
     {
-        question: "Empat orang duduk dalam satu barisan. Alice tidak duduk di ujung mana pun. Bob duduk di sebelah kanan Alice tetapi tidak harus di sebelahnya. Charlie duduk di sebelah kiri Bob. David duduk di salah satu ujung. Siapa yang duduk di ujung lainnya?",
-        options: ["Alice", "Bob", "Charlie", "David"],
-        correctAnswer: 2
-    },
-    {
-        question: "Anda berada di sebuah kompetisi di mana Anda memiliki pilihan antara berkompetisi dengan banyak peserta tetapi peluang menang rendah, atau berkompetisi dengan sedikit peserta tetapi peluang menang tinggi. Bagaimana strategi Anda untuk memilih kompetisi yang akan diikuti?",
+        question: "Empat orang duduk dalam satu barisan. Alice tidak duduk di ujung mana pun. Bob duduk di sebelah kanan Alice tetapi tidak harus di sebelahnya. Claire duduk di sebelah kiri Bob. David duduk di salah satu ujung. Siapa yang mungkin duduk di ujung lainnya?",
         options: [
-            "Berkompetisi dengan banyak peserta dan peluang menang rendah",
-            "Berkompetisi dengan sedikit peserta dan peluang menang tinggi",
-            "Mencari kompetisi yang memiliki hadiah lebih besar",
-            "Berlatih lebih keras untuk meningkatkan peluang menang",
-            "Mengikuti keduanya untuk meningkatkan pengalaman kompetisi"
+            "Alice",
+            "Bob",
+            "Claire",
+            "David",
+            "Evelyn",
+            "Tidak ada yang duduk di ujung lainnya"
         ],
-        correctAnswer: 1 // Berkompetisi dengan sedikit peserta dan peluang menang tinggi
+        correctAnswer: 4 // Evelyn
     },
     {
-        question: "Dalam sebuah simulasi bencana, Anda memiliki pilihan untuk menyelamatkan lima orang yang terjebak di bawah reruntuhan atau satu orang yang terperangkap di dalam mobil terbakar. Pilihan mana yang harus Anda ambil untuk memaksimalkan jumlah nyawa yang diselamatkan?",
+        "question": "Sebuah kelompok terdiri dari 6 orang: A, B, C, D, E, dan F. Mereka duduk mengelilingi sebuah meja bulat. Informasi yang diketahui adalah: A tidak bersebelahan dengan B. Di antara A dan D terdapat tepat satu orang. Di mana A bisa duduk?",
+        "options": [
+            "Di antara B dan C",
+            "Di antara D dan F",
+            "Di antara E dan F",
+            "Di antara C dan E",
+            "Tidak dapat ditentukan",
+            "Informasi tidak mencukupi"
+        ],
+        "correctAnswer": 3 // Di antara C dan E
+    },{
+        "question": "Seorang peneliti mengumpulkan data tentang kebiasaan makan sekelompok orang. Dia menemukan bahwa 30% dari orang-orang itu makan steak, 20% makan sushi, dan 10% makan keduanya. Berapa persen dari kelompok tersebut yang tidak makan sushi?",
+        "options": [
+            "50%",
+            "60%",
+            "70%",
+            "80%",
+            "Tidak dapat ditentukan",
+            "Informasi tidak mencukupi"
+        ],
+        "correctAnswer": 2 // 70%
+    },{
+        "question": "Sebuah tim bermain dalam turnamen sepak bola. Mereka memenangkan 2 pertandingan, seri 3 pertandingan, dan kalah 1 pertandingan. Berapa total poin yang mereka peroleh jika setiap kemenangan memberi 3 poin, seri memberi 1 poin, dan kekalahan memberi 0 poin?",
+        "options": [
+            "5 poin",
+            "7 poin",
+            "9 poin",
+            "11 poin",
+            "Tidak dapat ditentukan",
+            "Informasi tidak mencukupi"
+        ],
+        "correctAnswer": 3 // 9 poin
+    }
+    ,{
+        "question": "Sebuah kotak berisi 5 bola merah, 3 bola biru, dan 2 bola hijau. Jika satu bola diambil secara acak dari kotak tanpa penggantian, apa probabilitasnya bola tersebut tidak merah?",
+        "options": [
+            "2/5",
+            "3/5",
+            "4/5",
+            "7/10",
+            "Tidak dapat ditentukan",
+            "Informasi tidak mencukupi"
+        ],
+        "correctAnswer": 1 // 3/5
+    }
+,{
+    "question": "Seorang fotografer ingin membagi foto-foto pernikahan yang diambilnya kepada dua pasangan pengantin dengan adil. Jika dia memiliki 60 foto, berapa banyak foto yang akan dia berikan kepada setiap pasangan?",
+    "options": [
+        "20 foto",
+        "25 foto",
+        "30 foto",
+        "35 foto",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 0 // 20 foto
+}
+,{
+    "question": "Sebuah bus menuju dari A ke B dan kembali lagi dari B ke A dengan kecepatan rata-rata 60 km/jam. Jika bus berangkat dari A ke B pada pukul 10 pagi dan kembali dari B ke A pada pukul 2 sore pada hari yang sama, berapa jam yang dibutuhkan bus untuk perjalanan pulang pergi?",
+    "options": [
+        "4 jam",
+        "5 jam",
+        "6 jam",
+        "7 jam",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 1 // 5 jam
+}
+,{
+    "question": "Sebuah toko buku menjual 3 buku fiksi, 2 buku nonfiksi, dan 1 buku referensi. Jika seorang pembeli memilih 2 buku secara acak dari toko tersebut, berapa banyak cara yang mungkin untuk memilih buku-buku tersebut?",
+    "options": [
+        "5 cara",
+        "6 cara",
+        "8 cara",
+        "10 cara",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 2 // 6 cara
+}
+,{
+    "question": "Sebuah kotak berisi 6 kelereng merah, 4 kelereng biru, dan 2 kelereng hijau. Jika satu kelereng diambil secara acak dari kotak, berapa peluangnya kelereng tersebut tidak biru?",
+    "options": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "3/4",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 0 // 1/3
+}
+,{
+    "question": "Seorang ahli matematika memiliki 7 buku matematika, 5 buku fisika, dan 3 buku kimia. Jika dia memilih 3 buku acak dari koleksinya, berapa banyak cara yang mungkin untuk memilih kombinasi buku-buku tersebut?",
+    "options": [
+        "70 cara",
+        "105 cara",
+        "140 cara",
+        "175 cara",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 1 // 105 cara
+}
+,{
+    "question": "Sebuah perusahaan memiliki 100 karyawan. Jika 60% dari karyawan adalah pria, berapa jumlah pria di perusahaan tersebut?",
+    "options": [
+        "50 pria",
+        "60 pria",
+        "70 pria",
+        "80 pria",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 2 // 60 pria
+}
+,{
+    "question": "Sebuah kapal sedang berlayar dari A ke B dengan kecepatan rata-rata 20 km/jam. Jika perjalanan pulang pergi memakan waktu total 10 jam, berapa jarak tempuh dari A ke B?",
+    "options": [
+        "100 km",
+        "200 km",
+        "300 km",
+        "400 km",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 1 // 200 km
+}
+,{
+    "question": "Sebuah taman bermain memiliki 4 jenis permainan: ayunan, perosotan, jungkat-jungkit, dan taman bermain air. Jika setiap anak harus memilih dua jenis permainan yang berbeda, berapa banyak cara yang mungkin untuk memilih kombinasi permainan?",
+    "options": [
+        "6 cara",
+        "8 cara",
+        "10 cara",
+        "12 cara",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 3 // 12 cara
+}
+,{
+    "question": "Seorang penjual baju memiliki 8 kemeja lengan panjang, 6 kemeja lengan pendek, dan 4 kemeja polo. Jika seorang pembeli memilih 2 kemeja secara acak, berapa banyak cara yang mungkin untuk memilih kombinasi kemeja?",
+    "options": [
+        "30 cara",
+        "40 cara",
+        "50 cara",
+        "60 cara",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 1 // 40 cara
+}
+,{
+    "question": "Sebuah kantong berisi 5 bola merah, 3 bola biru, dan 2 bola hijau. Jika dua bola diambil secara acak tanpa penggantian, berapa peluangnya kedua bola tersebut memiliki warna yang sama?",
+    "options": [
+        "1/5",
+        "2/5",
+        "1/3",
+        "2/3",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 2 // 1/3
+}
+,{
+    "question": "Sebuah tim olahraga memenangkan 5 pertandingan, seri 3 pertandingan, dan kalah 2 pertandingan. Jika setiap kemenangan memberi 2 poin, seri memberi 1 poin, dan kekalahan memberi 0 poin, berapa total poin yang mereka peroleh?",
+    "options": [
+        "10 poin",
+        "12 poin",
+        "14 poin",
+        "16 poin",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 1 // 12 poin
+}
+,{
+    "question": "Sebuah kotak berisi 7 kelereng merah, 5 kelereng biru, dan 3 kelereng hijau. Jika dua kelereng diambil secara acak dari kotak, berapa peluangnya kedua kelereng tersebut berbeda warna?",
+    "options": [
+        "1/5",
+        "2/5",
+        "1/3",
+        "2/3",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 3 // 2/3
+}
+,{
+    "question": "Seorang peneliti mengumpulkan data tentang kegemaran musik sekelompok orang. Dia menemukan bahwa 40% dari mereka menyukai pop, 30% menyukai rock, dan 20% menyukai keduanya. Berapa persen dari kelompok tersebut yang tidak menyukai rock?",
+    "options": [
+        "30%",
+        "40%",
+        "50%",
+        "60%",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 2 // 50%
+}
+,{
+    "question": "Seorang petani memiliki 60 ekor ternak di peternakannya. Jika 75% dari ternaknya adalah sapi, berapa jumlah sapi di peternakan tersebut?",
+    "options": [
+        "40 sapi",
+        "45 sapi",
+        "50 sapi",
+        "55 sapi",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 1 // 45 sapi
+}
+,{
+    "question": "Sebuah sekolah memiliki 5 kelas dengan masing-masing 30 siswa. Jika 25% dari siswa di sekolah tersebut adalah perempuan, berapa jumlah siswa perempuan di sekolah tersebut?",
+    "options": [
+        "150 siswa",
+        "175 siswa",
+        "200 siswa",
+        "225 siswa",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 2 // 200 siswa
+}
+,{
+    "question": "Seorang pelatih memiliki tim bola basket dengan 12 pemain. Jika 60% dari pemainnya adalah putra, berapa jumlah putra di tim tersebut?",
+    "options": [
+        "6 putra",
+        "7 putra",
+        "8 putra",
+        "9 putra",
+        "Tidak dapat ditentukan",
+        "Informasi tidak mencukupi"
+    ],
+    "correctAnswer": 1 // 7 putra
+}              
+    ,
+    {
+        question: "Pilih antara menggunakan metode terbukti yang memakan waktu lama atau strategi yang menjanjikan hasil cepat dengan risiko kegagalan tinggi. Pilihan Anda?",
         options: [
-            "Lima orang di bawah reruntuhan",
-            "Satu orang di dalam mobil terbakar",
-            "Menyelamatkan kedua kelompok tersebut dengan bantuan tambahan",
+            "Metode terbukti untuk keamanan",
+            "Strategi cepat untuk efisiensi",
+            "Gabungkan kedua strategi untuk risiko terkendali",
+            "Tunda evaluasi untuk keputusan lebih matang",
+            "Minta masukan untuk strategi yang tepat",
+            "Tidak memilih, cari strategi alternatif"
+        ],
+        correctAnswer: 4 // Tidak memilih, cari strategi alternatif
+    }
+     ,
+    {
+        question: "Pilih antara menyelamatkan lima orang yang terjebak di bawah reruntuhan atau satu orang yang terperangkap di dalam mobil terbakar. Pilihan Anda?",
+        options: [
+            "Menyelamatkan lima orang di bawah reruntuhan",
+            "Menyelamatkan satu orang di dalam mobil terbakar",
             "Tidak menyelamatkan siapa pun",
-            "Menilai ulang situasi untuk mencari opsi lain yang lebih baik"
+            "Berpikir berdasarkan intuisi",
+            "Tidak melakukan tindakan apa pun",
+            "Memilih berdasarkan undian dadu"
         ],
-        correctAnswer: 0 // Lima orang di bawah reruntuhan
-    },
+        correctAnswer: 4 // Tidak melakukan tindakan apa pun
+    }
+    
+    ,
     {
-        question: "Anda memimpin tim riset yang memiliki dua proyek penting: satu berpotensi untuk menghasilkan keuntungan besar tetapi dengan risiko tinggi, dan satu lagi yang lebih stabil tetapi tidak memiliki potensi keuntungan besar. Bagaimana Anda memilih proyek yang akan diberikan prioritas pertama?",
+        question: "Pilih antara proyek berisiko tinggi dengan potensi keuntungan besar atau proyek stabil dengan keuntungan kecil. Pilihan Anda?",
         options: [
-            "Proyek berpotensi keuntungan besar dengan risiko tinggi",
-            "Proyek stabil dengan potensi keuntungan kecil",
-            "Mengkaji lebih lanjut mengenai kedua proyek",
-            "Tidak memprioritaskan proyek manapun",
-            "Memberikan proyek yang stabil tetapi potensial lebih banyak perhatian"
+            "Proyek berisiko tinggi, keuntungan besar",
+            "Proyek stabil, keuntungan kecil",
+            "Kaji lebih lanjut kedua proyek",
+            "Tidak prioritaskan proyek manapun",
+            "Perhatikan lebih pada proyek stabil",
+            "Rencana baru gabungan kedua proyek"
         ],
-        correctAnswer: 1 // Proyek stabil dengan potensi keuntungan kecil
-    },
+        correctAnswer: 5 // Rencana baru gabungan kedua proyek
+    }    
+    ,
     {
-        question: "Anda diberi kesempatan untuk memilih antara menerima pekerjaan yang menjanjikan gaji tinggi tetapi dengan tekanan kerja yang besar, atau pekerjaan dengan gaji yang lebih rendah tetapi lingkungan kerja yang lebih nyaman. Mana yang akan Anda pilih dan mengapa?",
+        question: "Pilih antara pekerjaan dengan gaji tinggi dan tekanan besar, atau pekerjaan dengan gaji rendah dan lingkungan nyaman. Pilihan Anda?",
         options: [
-            "Pekerjaan dengan gaji tinggi dan tekanan kerja besar",
-            "Pekerjaan dengan gaji rendah dan lingkungan kerja nyaman",
-            "Mencari tahu tentang lebih banyak opsi pekerjaan",
-            "Tidak menerima tawaran pekerjaan mana pun",
-            "Memilih pekerjaan dengan gaji tinggi dan berupaya mengelola tekanan dengan baik"
+            "Gaji tinggi dengan tekanan besar",
+            "Gaji rendah dengan lingkungan nyaman",
+            "Cari lebih banyak opsi pekerjaan",
+            "Tidak menerima tawaran pekerjaan",
+            "Ambil gaji tinggi untuk pengalaman",
+            "Pertimbangkan keseimbangan antara gaji dan lingkungan"
         ],
-        correctAnswer: 1 // Pekerjaan dengan gaji rendah dan lingkungan kerja nyaman
-    },
+        correctAnswer: 1 // Gaji rendah dengan lingkungan nyaman
+    }
+    ,
     {
-        question: "Saya adalah sebuah angka yang lebih besar dari 10 tetapi kurang dari 20. Saya adalah angka ganjil dan jumlah digit saya adalah 8. Siapakah saya?",
-        options: ["11", "13", "15", "17"],
-        correctAnswer: 2 // 17
-    },
+        question: "Saya adalah angka lebih dari 10 tapi kurang dari 20, ganjil, dan jumlah digit saya adalah 8. Siapakah saya?",
+        options: [
+            "11",
+            "13",
+            "15",
+            "17",
+            "19",
+            "Saya tidak ada di pilihan ini"
+        ],
+        correctAnswer: 5 // Saya tidak ada di pilihan ini
+    }
+    ,
     {
-        question: "Dalam sebuah investigasi kejahatan, detektif mewawancarai empat tersangka. Alex berkata, 'Blake yang melakukannya.' Blake berkata, 'Chris yang melakukannya.' Chris berkata, 'Blake berbohong.' Drew berkata, 'Alex berbohong.' Jika hanya satu dari mereka yang mengatakan kebenaran, siapa yang melakukan kejahatan?",
-        options: ["Alex", "Blake", "Chris", "Drew"],
-        correctAnswer: 0 // Alex
-    },
+        question: "Dalam investigasi kejahatan, empat tersangka saling menuduh. Alex: 'Blake yang melakukannya.' Blake: 'Chris yang melakukannya.' Chris: 'Blake berbohong.' Drew: 'Alex berbohong.' Siapa yang sebenarnya melakukan kejahatan?",
+        options: [
+            "Alex",
+            "Blake",
+            "Chris",
+            "Drew",
+            "Tidak ada yang mengatakan kebenaran",
+            "Semua mereka berbohong"
+        ],
+        correctAnswer: 4 // Tidak ada yang mengatakan kebenaran
+    }
+    ,
     {
-        question: "Saya adalah sebuah benda yang memiliki empat kaki, tetapi tidak bisa berjalan. Saya sering digunakan untuk makan atau bekerja. Siapakah saya?",
-        options: ["Kursi", "Meja", "Lemari", "Ranjang"],
-        correctAnswer: 1 // Meja
-    },
+        question: "Benda ini memiliki empat kaki dan digunakan untuk makan atau bekerja. Siapakah saya?",
+        options: [
+            "Kursi",
+            "Meja",
+            "Lemari",
+            "Ranjang",
+            "Baki",
+            "Rak"
+        ],
+        correctAnswer: 4 // Baki
+    }
+    ,
     {
         question: "Jika semua siswa di kelas memegang buku, dan sebagian dari mereka juga memegang pena, mana yang benar?",
-        options: ["Semua siswa memegang buku dan pena", "Sebagian siswa memegang buku dan pena", "Tidak ada siswa yang memegang pena", "Semua siswa hanya memegang buku"],
+        options: [
+            "Semua siswa memegang buku dan pena",
+            "Sebagian siswa memegang buku dan pena",
+            "Tidak ada siswa yang memegang pena",
+            "Semua siswa hanya memegang buku",
+            "Semua siswa memegang pena, tapi tidak ada yang memegang buku",
+            "Sebagian siswa hanya memegang pena"
+        ],
         correctAnswer: 1 // Sebagian siswa memegang buku dan pena
-    },
+    }
+    ,
     {
         question: "Saya memiliki kunci tetapi tidak memiliki pintu. Saya dapat membuka sesuatu tetapi tidak bisa masuk. Siapakah saya?",
-        options: ["Kunci rumah", "Kunci mobil", "Kunci jawaban", "Kunci keyboard"],
-        correctAnswer: 3 // Kunci keyboard
-    },
+        options: [
+            "Kunci rumah",
+            "Kunci mobil",
+            "Kunci jawaban",
+            "Kunci keyboard",
+            "Kunci koper",
+            "Kunci ingatan"
+        ],
+        correctAnswer: 2 // Kunci jawaban
+    }
+    ,
     {
-        question: "Jika sebagian besar anggota klub adalah pelajar, dan semua pelajar adalah anggota perpustakaan, maka mana yang benar?",
-        options: ["Semua anggota klub adalah anggota perpustakaan", "Semua anggota perpustakaan adalah anggota klub", "Sebagian anggota klub adalah anggota perpustakaan", "Sebagian anggota perpustakaan adalah anggota klub"],
+        question: "Jika sebagian besar anggota klub adalah pelajar, dan semua pelajar adalah anggota perpustakaan, mana yang benar?",
+        options: [
+            "Semua anggota klub adalah anggota perpustakaan",
+            "Semua anggota perpustakaan adalah anggota klub",
+            "Sebagian anggota klub adalah anggota perpustakaan",
+            "Sebagian anggota perpustakaan adalah anggota klub",
+            "Semua anggota klub adalah pelajar",
+            "Semua anggota perpustakaan adalah pelajar"
+        ],
         correctAnswer: 0 // Semua anggota klub adalah anggota perpustakaan
-    },
+    }
+    ,
     {
         question: "Dua peluru ditembakkan pada waktu yang sama dari senjata yang berbeda, dengan kecepatan yang sama. Anehnya, peluru pertama jatuh ke tanah lebih cepat daripada peluru kedua. Mengapa hal ini bisa terjadi?",
         options: [
             "Peluru pertama lebih berat daripada peluru kedua",
             "Peluru kedua mengalami gesekan udara yang lebih sedikit",
             "Senjata pertama ditembakkan dari ketinggian yang lebih rendah",
-            "Peluru pertama mengalami hambatan udara yang lebih besar"
+            "Peluru pertama mengalami hambatan udara yang lebih besar",
+            "Peluru kedua ditembakkan dengan sudut yang lebih tinggi",
+            "Angin bertiup lebih kencang pada saat peluru pertama ditembakkan"
         ],
-        correctAnswer: 4 // Peluru pertama mengalami hambatan udara yang lebih besar
+        correctAnswer: 3 // Peluru pertama mengalami hambatan udara yang lebih besar
+    }    
+    ,
+    {
+        question: "Sebagai pengusaha sukses, Anda dihadapkan pada pilihan: memperluas bisnis ke pasar internasional dengan potensi pertumbuhan besar namun risiko keuangan tinggi, atau mempertahankan operasi domestik yang stabil namun pertumbuhan terbatas. Bagaimana langkah terbaik untuk bisnis Anda?",
+        options: [
+            "Memperluas bisnis ke pasar internasional untuk mengambil keuntungan dari potensi pertumbuhan besar",
+            "Mempertahankan operasi domestik untuk menghindari risiko keuangan tinggi di pasar internasional",
+            "Melakukan studi pasar untuk memastikan langkah ekspansi internasional sesuai",
+            "Mengalokasikan sumber daya untuk inovasi produk di pasar domestik",
+            "Bentuk kemitraan strategis dengan perusahaan lokal untuk memperkuat posisi di pasar domestik",
+            "Teliti peluang diversifikasi produk di pasar domestik"
+        ],
+        correctAnswer: 0 // Memperluas bisnis ke pasar internasional untuk mengambil keuntungan dari potensi pertumbuhan yang lebih besar
+    }
+    
+    ,
+    {
+        question: "Anda adalah seorang peneliti senior pada proyek vaksin baru. Anda memiliki pilihan: melanjutkan dengan lebih banyak sumber daya untuk pengembangan vaksin, atau mengalihkan fokus ke riset alternatif yang berpotensi lebih menguntungkan. Bagaimana langkah Anda?",
+        options: [
+            "Melanjutkan dengan lebih banyak sumber daya untuk pengembangan vaksin baru",
+            "Mengalihkan sumber daya ke riset alternatif yang berpotensi lebih menguntungkan",
+            "Mengajukan proposal dana tambahan untuk proyek vaksin baru",
+            "Mengadakan evaluasi hasil penelitian dengan tim",
+            "Menyusun laporan riset untuk badan pengawas ilmiah",
+            "Investasi dalam infrastruktur laboratorium"
+        ],
+        correctAnswer: 0 // Melanjutkan dengan lebih banyak sumber daya untuk pengembangan vaksin baru
     }
     ,
     {
-        question: "Sebagai seorang pengusaha sukses, Anda menghadapi pilihan antara memperluas bisnis Anda ke pasar internasional dengan potensi keuntungan besar tetapi risiko keuangan yang tinggi, atau mempertahankan operasi domestik yang stabil tetapi dengan pertumbuhan yang terbatas. Bagaimana Anda akan mengevaluasi dan memilih langkah terbaik untuk bisnis Anda?",
+        question: "Sebagai arsitek terkemuka, Anda merancang bangunan pencakar langit ikonik di pusat kota. Pilihan Anda: desain estetika dengan tantangan teknis besar, atau desain fungsional yang cepat dibangun namun kurang inovatif. Bagaimana Anda memilih solusi yang tepat?",
         options: [
-            "Memperluas bisnis ke pasar internasional untuk mengambil keuntungan dari potensi pertumbuhan yang lebih besar",
-            "Mempertahankan operasi domestik untuk menghindari risiko keuangan yang tinggi di pasar internasional",
-            "Melakukan studi pasar mendalam untuk memastikan kesesuaian langkah ekspansi internasional",
-            "Mengalokasikan sumber daya untuk mengembangkan inovasi produk di pasar domestik",
-            "Membentuk kemitraan strategis dengan perusahaan lokal untuk memperkuat posisi pasar domestik"
+            "Desain estetika dengan tantangan teknis besar",
+            "Desain fungsional dan cepat untuk kebutuhan praktis",
+            "Kolaborasi untuk menggabungkan estetika dan fungsionalitas optimal",
+            "Pertemuan untuk menetapkan prioritas desain bersama pemangku kepentingan",
+            "Evaluasi dampak jangka panjang dari kedua opsi desain",
+            "Inspirasi dari pencakar langit global"
         ],
-        correctAnswer: 0 // Memperluas bisnis ke pasar internasional untuk mengambil keuntungan dari potensi pertumbuhan yang lebih besar
-    },
+        correctAnswer: 2 // Kolaborasi untuk menggabungkan estetika dan fungsionalitas optimal
+    }
+    ,
     {
-        question: "Anda adalah seorang peneliti senior yang bekerja pada proyek ilmiah besar untuk menemukan vaksin baru. Setelah tahap awal penelitian, Anda memiliki opsi untuk melanjutkan penelitian dengan mengalokasikan lebih banyak sumber daya untuk pengembangan, atau menghentikan proyek dan mengalihkan fokus pada riset alternatif yang berpotensi lebih menguntungkan. Bagaimana Anda akan memutuskan langkah berikutnya?",
+        question: "Di laboratorium penelitian, hanya beberapa ilmuwan memiliki akses ke perangkat eksperimen tertentu. Ilmuwan dengan akses ke perangkat eksperimen juga memiliki latar belakang pendidikan dalam fisika kuantum. Mana yang pasti benar?",
         options: [
-            "Melanjutkan penelitian dengan mengalokasikan lebih banyak sumber daya untuk pengembangan vaksin baru",
-            "Menghentikan proyek dan mengalihkan sumber daya untuk riset alternatif yang berpotensi lebih menguntungkan",
-            "Mengajukan proposal dana tambahan untuk mendukung proyek vaksin baru",
-            "Mengadakan pertemuan dengan tim peneliti untuk mengevaluasi hasil penelitian sejauh ini",
-            "Menyusun laporan riset yang komprehensif untuk ditinjau oleh badan pengawas ilmiah"
+            "Semua ilmuwan di laboratorium memiliki latar belakang pendidikan dalam fisika kuantum",
+            "Semua ilmuwan dengan latar belakang pendidikan dalam fisika kuantum memiliki akses ke perangkat eksperimen tertentu",
+            "Beberapa ilmuwan memiliki akses ke perangkat eksperimen tertentu",
+            "Tidak ada ilmuwan di laboratorium yang memiliki latar belakang pendidikan dalam fisika kuantum",
+            "Ilmuwan tanpa latar belakang pendidikan dalam fisika kuantum juga dapat mengakses perangkat eksperimen",
+            "Semua ilmuwan di laboratorium memiliki akses ke semua perangkat eksperimen"
         ],
-        correctAnswer: 0 // Melanjutkan penelitian dengan mengalokasikan lebih banyak sumber daya untuk pengembangan vaksin baru
-    },
+        correctAnswer: 2 // Beberapa ilmuwan memiliki akses ke perangkat eksperimen tertentu
+    }
+    ,
     {
-        question: "Sebagai seorang arsitek terkemuka, Anda memiliki tanggung jawab untuk merancang sebuah bangunan pencakar langit yang ikonik di pusat kota. Anda dihadapkan pada pilihan antara memilih desain yang mengedepankan keindahan estetika tetapi menghadapi tantangan teknis besar, atau memilih desain yang lebih fungsional dan dapat dibangun dengan cepat tetapi kurang inovatif dari segi desain. Bagaimana Anda akan memutuskan desain yang tepat untuk proyek ini?",
+        question: "Selalu di depanmu, tak terlihat. Datang setiap hari, tak pernah tinggal. Siapakah aku?",
         options: [
-            "Memilih desain yang mengedepankan keindahan estetika meskipun menghadapi tantangan teknis besar",
-            "Memilih desain yang lebih fungsional dan dapat dibangun dengan cepat untuk memenuhi kebutuhan praktis",
-            "Berkolaborasi dengan tim arsitek untuk menggabungkan elemen estetika dan fungsionalitas yang optimal",
-            "Mengorganisir pertemuan dengan pemangku kepentingan untuk menetapkan prioritas desain proyek",
-            "Mengevaluasi dampak jangka panjang dari kedua opsi desain terhadap kota dan masyarakat sekitar"
+            "Masa depan",
+            "Waktu",
+            "Ketidaksadaran",
+            "Pemikiran",
+            "Impian",
+            "Harapan"
         ],
-        correctAnswer: 2 // Berkolaborasi dengan tim arsitek untuk menggabungkan elemen estetika dan fungsionalitas yang optimal
-    },
+        correctAnswer: 0 // Masa depan
+    }
+    ,
     {
-        question: "Di sebuah laboratorium penelitian, hanya beberapa ilmuwan yang memiliki akses ke perangkat eksperimen tertentu. Setiap ilmuwan yang memiliki akses ke perangkat eksperimen tertentu juga memiliki latar belakang pendidikan dalam bidang fisika kuantum. Berdasarkan informasi ini, mana yang pasti benar?",
+        question: "Jika sebagian dari tanaman di kebun adalah bunga, dan semua bunga adalah tanaman, mana yang benar?",
         options: [
-            "Semua ilmuwan di laboratorium memiliki latar belakang pendidikan dalam bidang fisika kuantum",
-            "Semua ilmuwan yang memiliki latar belakang pendidikan dalam bidang fisika kuantum juga memiliki akses ke perangkat eksperimen tertentu",
-            "Beberapa ilmuwan di laboratorium memiliki akses ke perangkat eksperimen tertentu",
-            "Tidak ada ilmuwan di laboratorium yang memiliki latar belakang pendidikan dalam bidang fisika kuantum"
+            "Semua tanaman di kebun adalah bunga",
+            "Semua bunga adalah tanaman di kebun",
+            "Beberapa bunga di kebun adalah tanaman",
+            "Tidak ada tanaman di kebun yang bukan bunga",
+            "Beberapa bunga di kebun tidak ada yang adalah tanaman",
+            "Tidak semua tanaman di kebun adalah bunga"
         ],
-        correctAnswer: 2 // Beberapa ilmuwan di laboratorium memiliki akses ke perangkat eksperimen tertentu
-    },
+        correctAnswer: 2 // Beberapa bunga di kebun adalah tanaman
+    }
+    ,
     {
-        question: "Saya selalu di depanmu tetapi tidak bisa kamu lihat. Saya datang setiap hari tetapi tidak pernah tinggal. Siapakah saya?",
-        options: ["Waktu", "Masa depan", "Bayangan", "Cahaya"],
-        correctAnswer: 1 // Masa depan
-    },
-    {
-        question: "Jika sebagian dari tanaman di kebun adalah bunga, dan semua bunga adalah tanaman, maka mana yang benar?",
-        options: ["Semua tanaman di kebun adalah bunga", "Semua bunga adalah tanaman di kebun", "Sebagian tanaman di kebun adalah bunga", "Semua tanaman di kebun bukan bunga"],
-        correctAnswer: 2 // Sebagian tanaman di kebun adalah bunga
-    },
-    {
-        question: "Saya memiliki ekor tetapi bukan hewan. Saya memiliki sayap tetapi bukan burung. Saya bisa terbang tetapi bukan pesawat. Siapakah saya?",
-        options: ["Naga", "Kupu-kupu", "Layangan", "Helikopter"],
+        question: "Saya memiliki ekor, tapi bukan hewan. Saya memiliki sayap, tapi bukan burung. Saya bisa terbang, tapi bukan pesawat. Siapakah saya?",
+        options: [
+            "Naga",
+            "Kupu-kupu",
+            "Layangan",
+            "Helikopter",
+            "Paraglider",
+            "Terumbu karang"
+        ],
         correctAnswer: 2 // Layangan
-    },
+    }
+    ,
     {
-        question: "Jika semua burung bisa terbang, dan sebagian hewan di kebun binatang adalah burung, maka mana yang benar?",
-        options: ["Semua hewan di kebun binatang bisa terbang", "Sebagian hewan di kebun binatang bisa terbang", "Tidak ada hewan di kebun binatang yang bisa terbang", "Semua burung di kebun binatang bisa terbang"],
-        correctAnswer: 3 // Semua burung di kebun binatang bisa terbang
-    },
+        question: "Jika semua burung bisa terbang, dan sebagian hewan di kebun binatang adalah burung, mana yang bisa dikatakan dengan pasti?",
+        options: [
+            "Setiap hewan di kebun binatang bisa terbang",
+            "Hanya sebagian hewan di kebun binatang bisa terbang",
+            "Tidak satupun hewan di kebun binatang yang bisa terbang",
+            "Setiap burung di kebun binatang bisa terbang",
+            "Hanya beberapa burung di kebun binatang yang bisa terbang",
+            "Tidak ada hewan di kebun binatang yang bisa terbang kecuali burung"
+        ],
+        correctAnswer: 3 // Setiap burung di kebun binatang bisa terbang
+    }
+    ,
     {
-        question: "Saya adalah sebuah kata yang tetap sama ketika dibaca dari depan maupun belakang. Saya bisa berarti tempat tinggal. Siapakah saya?",
-        options: ["Rumah", "Kamar", "Kasur", "Gubug"],
-        correctAnswer: 3 // Gubug
-    },
+        question: "Saya adalah sebuah kata yang sama jika dibaca dari depan atau belakang. Saya bisa berarti tempat tinggal. Siapakah saya?",
+        options: [
+            "Kasur",
+            "Gubug",
+            "Kamar",
+            "Rumah",
+            "Tempat",
+            "Resor"
+        ],
+        correctAnswer: 0 // Kasur
+    }
+    ,
     {
         question: "Jika semua buku di rak adalah novel, dan sebagian dari novel itu adalah fiksi, maka mana yang benar?",
-        options: ["Semua novel adalah buku fiksi", "Semua buku fiksi adalah novel", "Sebagian novel adalah buku fiksi", "Tidak ada novel yang merupakan buku fiksi"],
-        correctAnswer: 2 // Sebagian novel adalah buku fiksi
-    },
-    {
-        question: "Saya adalah sebuah kata yang terdiri dari lima huruf, namun jika kamu menghilangkan dua huruf terakhir saya tetap akan terdengar sama. Siapakah saya?",
-        options: ["Pesawat", "Pisau", "Perahu", "Pulau"],
-        correctAnswer: 0 // Pesawat
-    },
-    {
-        question: "Anda berada di tengah-tengah perang saudara di sebuah negara. Sebagai pemimpin pasukan, Anda memiliki dua pilihan strategi: melancarkan serangan besar-besaran untuk mengambil alih ibu kota musuh dalam waktu singkat dengan risiko tinggi, atau melakukan serangan gerilya untuk merusak pasokan musuh secara bertahap dengan risiko kecil. Mana strategi yang akan Anda pilih dan mengapa?",
         options: [
-            "Melancarkan serangan besar-besaran untuk mengambil alih ibu kota musuh",
-            "Melakukan serangan gerilya untuk merusak pasokan musuh",
-            "Menjalin aliansi dengan faksi musuh untuk menghindari konflik",
-            "Menjaga status quo tanpa melakukan tindakan militer",
-            "Menilai ulang situasi berdasarkan informasi terbaru dan intelijen"
+            "Semua novel di rak adalah buku fiksi",
+            "Semua buku fiksi adalah novel di rak",
+            "Beberapa novel adalah buku fiksi",
+            "Tidak ada novel yang merupakan buku fiksi",
+            "Semua buku di rak adalah novel fiksi",
+            "Beberapa buku fiksi adalah novel"
         ],
-        correctAnswer: 1 // Melakukan serangan gerilya untuk merusak pasokan musuh
-    },
+        correctAnswer: 5 // Beberapa buku fiksi adalah novel
+    }
+    ,
     {
-        question: "Anda adalah seorang arkeolog yang menemukan dua situs kuno yang belum pernah dieksplorasi sebelumnya: satu terletak di daerah hutan belantara yang berbahaya dengan potensi penemuan besar tetapi juga berisiko tinggi, dan satu lagi terletak di dataran rendah yang lebih aman tetapi memiliki potensi penemuan yang lebih kecil. Bagaimana Anda memilih untuk mengalokasikan sumber daya penelitian Anda?",
+        question: "Saya adalah sebuah kata lima huruf. Jika kamu menghilangkan dua huruf terakhir, namun bunyiku tetap sama. Siapakah saya?",
         options: [
-            "Mengeksplorasi situs di daerah hutan belantara dengan risiko tinggi",
-            "Mengeksplorasi situs di dataran rendah dengan potensi penemuan kecil",
-            "Mengalokasikan sumber daya penelitian secara merata untuk kedua situs",
-            "Menyewa tim peneliti untuk melakukan penilaian lebih lanjut",
-            "Meminta bantuan dari otoritas setempat untuk penilaian risiko"
+            "Pesawat",
+            "Pisau",
+            "Perahu",
+            "Pulau",
+            "Pemandu",
+            "Perawan"
         ],
-        correctAnswer: 0 // Mengeksplorasi situs di daerah hutan belantara dengan risiko tinggi
-    },
+        correctAnswer: 4 // Pemandu
+    }
+    ,
     {
-        question: "Anda adalah seorang manajer proyek yang bertanggung jawab atas dua proyek besar: satu proyek membangun jembatan penting untuk menghubungkan dua kota besar dengan biaya dan jangka waktu yang besar, dan satu lagi proyek membangun sistem irigasi untuk wilayah pedesaan dengan biaya yang lebih rendah tetapi dampak sosial yang signifikan. Bagaimana Anda memprioritaskan antara kedua proyek tersebut?",
+        question: "Di tengah perang saudara, sebagai pemimpin pasukan, Anda memilih strategi mana?",
         options: [
-            "Memprioritaskan proyek membangun jembatan penting antarkota",
-            "Memprioritaskan proyek membangun sistem irigasi untuk wilayah pedesaan",
-            "Menghentikan kedua proyek dan mengalokasikan sumber daya untuk proyek lain",
-            "Mencari pendanaan tambahan untuk kedua proyek secara bersamaan",
-            "Mengkaji ulang dampak jangka panjang dari kedua proyek"
+            "Serangan besar-besaran untuk menguasai ibu kota musuh",
+            "Operasi gerilya untuk mengganggu pasokan musuh",
+            "Membentuk aliansi dengan faksi musuh untuk mengurangi konflik",
+            "Memilih untuk tidak bertindak militer",
+            "Meninjau ulang strategi berdasarkan intelijen terbaru",
+            "Mengatur perangkap untuk membingungkan musuh"
         ],
-        correctAnswer: 0 // Memprioritaskan proyek membangun jembatan penting antarkota
-    },
+        correctAnswer: 1 // Operasi gerilya untuk mengganggu pasokan musuh
+    }
+    
+    ,
     {
-        question: "Anda adalah seorang kapten kapal selam yang terjebak di perairan musuh dengan dua opsi: mencoba melarikan diri dengan risiko terdeteksi atau tetap bersembunyi dan menunggu bantuan dengan risiko kehabisan pasokan oksigen. Bagaimana Anda memutuskan langkah terbaik untuk dilakukan?",
+        question: "Anda menemukan dua situs kuno: satu berbahaya dengan potensi besar, satu lagi aman dengan potensi kecil. Bagaimana Anda memilih untuk mengalokasikan sumber daya penelitian Anda?",
         options: [
-            "Mencoba melarikan diri dengan risiko terdeteksi",
+            "Eksplorasi situs berbahaya dengan risiko tinggi",
+            "Eksplorasi situs aman dengan penemuan terbatas",
+            "Alokasikan sumber daya secara merata untuk kedua situs",
+            "Sewa tim untuk penilaian mendalam",
+            "Minta bantuan otoritas setempat untuk penilaian risiko",
+            "Tidak alokasikan sumber daya untuk eksplorasi"
+        ],
+        correctAnswer: 0 // Eksplorasi situs berbahaya dengan risiko tinggi
+    }
+    
+    
+    ,
+    {
+        question: "Sebagai manajer proyek, Anda menghadapi pilihan antara dua proyek besar. Mana yang Anda prioritaskan?",
+        options: [
+            "Membangun jembatan antarkota yang penting",
+            "Membangun sistem irigasi untuk wilayah pedesaan",
+            "Menghentikan proyek dan mencari alternatif baru",
+            "Mencari pendanaan tambahan untuk kedua proyek",
+            "Mengevaluasi dampak jangka panjang dari masing-masing proyek",
+            "Mengubah ruang lingkup kedua proyek untuk mengurangi biaya"
+        ],
+        correctAnswer: 0 // Membangun jembatan antarkota yang penting
+    }
+    ,
+    {
+        question: "Anda, sebagai kapten kapal selam, terjebak di perairan musuh. Bagaimana langkah terbaik yang akan Anda ambil?",
+        options: [
+            "Coba melarikan diri dengan risiko terdeteksi",
             "Tetap bersembunyi dan menunggu bantuan",
-            "Menghancurkan kapal selam untuk menghindari penangkapan",
-            "Mengirim sinyal darurat untuk meminta bantuan segera",
-            "Mengadakan perundingan dengan pihak musuh untuk menyelesaikan krisis"
+            "Hancurkan kapal untuk menghindari penangkapan",
+            "Kirim sinyal darurat untuk bantuan segera",
+            "Lakukan perundingan dengan musuh untuk menyelesaikan krisis",
+            "Evaluasi kemungkinan risiko untuk memilih langkah terbaik"
         ],
         correctAnswer: 1 // Tetap bersembunyi dan menunggu bantuan
-    },
+    }
+    ,
     {
-        question: "Saya adalah sesuatu yang kamu bisa menulis tanpa tinta dan membaca tanpa kertas. Siapakah saya?",
-        options: ["Komputer", "Papan tulis", "Cermin", "Buku elektronik"],
+        question: "Sesuatu yang bisa kamu tulis tanpa tinta dan baca tanpa kertas adalah?",
+        options: [
+            "Komputer",
+            "Papan tulis digital",
+            "Cermin",
+            "Buku elektronik",
+            "Layar sentuh",
+            "Proyektor"
+        ],
         correctAnswer: 3 // Buku elektronik
-    },
+    }
+    ,
     {
-        question: "Jika semua mobil di jalan berwarna merah, dan sebagian kendaraan di jalan adalah mobil, maka mana yang benar?",
-        options: ["Semua kendaraan di jalan berwarna merah", "Semua kendaraan berwarna merah adalah mobil", "Sebagian kendaraan di jalan berwarna merah", "Tidak ada kendaraan di jalan yang berwarna merah"],
+        question: "Sebagian kendaraan di jalan berwarna merah. Mana yang benar?",
+        options: [
+            "Semua kendaraan di jalan berwarna merah",
+            "Semua kendaraan berwarna merah adalah mobil",
+            "Sebagian kendaraan di jalan berwarna merah",
+            "Tidak ada kendaraan di jalan yang berwarna merah",
+            "Semua mobil di jalan berwarna merah",
+            "Semua kendaraan berwarna merah adalah mobil"
+        ],
         correctAnswer: 2 // Sebagian kendaraan di jalan berwarna merah
-    },
+    }
+    ,
     {
-        question: "Saya adalah sebuah angka yang jika kamu tambahkan dengan angka yang sama, hasilnya adalah angka itu sendiri. Siapakah saya?",
-        options: ["0", "1", "2", "3"],
+        question: "Saya adalah angka yang jika ditambahkan dengan angka yang sama, hasilnya adalah angka itu sendiri. Siapakah saya?",
+        options: [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
         correctAnswer: 0 // 0
-    },
+    }
+    ,
     {
-        question: "Lima teman (Alan, Ben, Carl, Dan, Evan) duduk mengelilingi meja bundar. Alan duduk di sebelah Ben. Ben duduk di sebelah Carl. Carl tidak duduk di sebelah Dan. Dan duduk di sebelah Evan. Siapa yang duduk tepat di seberang Alan?",
-        options: ["Ben", "Carl", "Dan", "Evan"],
-        correctAnswer: 3
-    },
+        question: "Alan duduk di sebelah Ben. Ben di sebelah Carl. Carl tidak bersebelahan dengan Dan. Dan di sebelah Evan. Siapa yang duduk tepat di seberang Alan?",
+        options: [
+            "Ben",
+            "Carl",
+            "Dan",
+            "Evan",
+            "Alan",
+            "Tidak ada yang berseberangan dengan Alan"
+        ],
+        correctAnswer: 3 // Evan
+    }
+    ,
     {
-        question: "Seorang detektif memiliki tiga tersangka: Larry, Moe, dan Curly. Larry berkata, 'Moe berbohong.' Moe berkata, 'Curly yang melakukannya.' Curly berkata, 'Moe berbohong.' Jika hanya satu dari mereka yang mengatakan kebenaran, siapa yang melakukan kejahatan?",
-        options: ["Larry", "Moe", "Curly"],
-        correctAnswer: 1
-    },
+        question: "Detektif memiliki tiga tersangka: Larry, Moe, dan Curly. Larry berkata, 'Moe berbohong.' Moe berkata, 'Curly yang melakukannya.' Curly berkata, 'Moe berbohong.' Siapa yang melakukan kejahatan?",
+        options: [
+            "Larry mengatakan kebenaran",
+            "Moe mengatakan kebenaran",
+            "Curly mengatakan kebenaran",
+            "Larry berbohong",
+            "Moe berbohong",
+            "Curly berbohong"
+        ],
+        correctAnswer: 1 // Moe
+    }
+    ,
     {
         question: "Empat orang berdiri dalam antrean: John, Paul, George, dan Ringo. John tidak berada di depan. Paul berdiri tepat di belakang John. George berdiri tepat di belakang Paul. Ringo tidak berada di ujung. Siapa yang berdiri di depan?",
-        options: ["John", "Paul", "George", "Ringo"],
-        correctAnswer: 3
-    },
+        options: [
+            "John",
+            "Paul",
+            "George",
+            "Ringo",
+            "Tidak dapat diketahui dari informasi yang diberikan",
+            "Semua jawaban salah"
+        ],
+        correctAnswer: 3 // Ringo
+    }
+    ,
     {
         question: "Di sebuah ruangan, ada empat orang: A, B, C, dan D. A berkata, 'B berbohong.' B berkata, 'C yang melakukannya.' C berkata, 'D berbohong.' D berkata, 'A berbohong.' Jika hanya satu dari mereka yang mengatakan kebenaran, siapa yang melakukan kejahatan?",
-        options: ["A", "B", "C", "D"],
-        correctAnswer: 2
-    },
-    {
-        question: "Tiga orang duduk di meja: X, Y, dan Z. X berkata, 'Saya bukan Y.' Y berkata, 'Z bukan X.' Z berkata, 'X bukan Y.' Jika hanya satu dari mereka yang berbohong, siapa yang berbohong?",
-        options: ["X", "Y", "Z"],
-        correctAnswer: 0
-    },
-    {
-        question: "Lima tersangka (A, B, C, D, E) sedang diinterogasi. A berkata, 'B berbohong.' B berkata, 'C yang melakukannya.' C berkata, 'D berbohong.' D berkata, 'E berbohong.' E berkata, 'A berbohong.' Jika hanya satu dari mereka yang mengatakan kebenaran, siapa yang melakukan kejahatan?",
-        options: ["A", "B", "C", "D", "E"],
-        correctAnswer: 1
-    },
-    {
-        question: "Anda adalah seorang ahli psikologi forensik yang ditugaskan untuk menganalisis perilaku seorang tersangka dalam kasus pembunuhan yang rumit. Tersangka ini adalah seorang pemimpin politik yang sangat dihormati. Bukti fisik tidak cukup kuat untuk menentukan kesalahan. Anda memiliki dua opsi: meminta izin untuk mengakses catatan medis dan riwayat psikologis tersangka yang bisa mempengaruhi opini publik dan membatalkan kredibilitasnya, atau menunggu dan melanjutkan penyelidikan dengan risiko bukti fisik bisa hilang. Bagaimana pendekatan Anda dalam menangani situasi ini?",
         options: [
-            "Meminta izin untuk mengakses catatan medis dan riwayat psikologis tersangka untuk mempengaruhi opini publik",
-            "Melanjutkan penyelidikan dengan risiko bukti fisik bisa hilang",
-            "Menyarankan otoritas untuk melakukan penangkapan langsung berdasarkan bukti fisik yang ada",
-            "Mengumpulkan bukti tambahan dari saksi-saksi kunci dalam kasus ini",
-            "Mengadakan konferensi pers untuk mengklarifikasi detail dari bukti fisik yang telah dikumpulkan"
+            "A",
+            "B",
+            "C",
+            "D",
+            "Semua mereka berbohong",
+            "Tidak dapat dipastikan dari informasi yang diberikan"
         ],
-        correctAnswer: 0 // Meminta izin untuk mengakses catatan medis dan riwayat psikologis tersangka untuk mempengaruhi opini publik
-    },
+        correctAnswer: 2 // C
+    }
+    ,
     {
-        question: "Sebagai seorang ilmuwan terkemuka dalam bidang teknologi AI, Anda menghadapi situasi di mana sistem AI yang Anda kembangkan diintegrasikan ke dalam kendaraan otonom untuk penggunaan komersial. Anda memiliki dua opsi: melanjutkan pengembangan untuk meningkatkan kecerdasan emosional dan sosial AI dengan potensi keuntungan besar tetapi risiko etika yang signifikan, atau membatasi fokus pada kecerdasan teknis dengan mengurangi dampak sosial dan etika. Bagaimana Anda akan memutuskan langkah berikutnya?",
+        question: "Di sebuah kota, ada lima sahabat: P, Q, R, S, dan T. Mereka masing-masing memiliki hewan peliharaan yang berbeda: kucing, anjing, burung, kelinci, dan hamster. Mereka membuat pernyataan sebagai berikut:",
         options: [
-            "Melanjutkan pengembangan untuk meningkatkan kecerdasan emosional dan sosial AI dengan potensi keuntungan besar",
-            "Membatasi fokus pada kecerdasan teknis dengan mengurangi dampak sosial dan etika",
-            "Menghentikan pengembangan AI untuk mengevaluasi implikasi etika lebih lanjut",
-            "Mengadakan konferensi ilmiah untuk membahas keberlanjutan AI di masa depan",
-            "Mengumpulkan masukan dari komunitas ilmiah dan etika untuk mengarahkan pengembangan AI yang lebih baik"
+            "P mengatakan, 'Q memiliki kucing.'",
+            "Q mengatakan, 'R memiliki anjing.'",
+            "R mengatakan, 'S memiliki burung.'",
+            "S mengatakan, 'T memiliki kelinci.'",
+            "T mengatakan, 'P memiliki hamster.'",
+            "Semua pernyataan mereka salah"
         ],
-        correctAnswer: 0 // Melanjutkan pengembangan untuk meningkatkan kecerdasan emosional dan sosial AI dengan potensi keuntungan besar
-    },
+        correctAnswer: 3 // S memiliki burung
+    }
+    
+    ,
     {
-        question: "Anda adalah seorang ekonom yang ditugaskan untuk merancang kebijakan fiskal untuk menghadapi resesi ekonomi yang mendalam. Anda memiliki dua opsi: meluncurkan stimulus besar-besaran dengan risiko utang negara yang signifikan, atau menerapkan kebijakan penghematan yang ketat yang dapat memperburuk kondisi ekonomi jangka panjang tetapi menjaga kredibilitas keuangan negara. Bagaimana Anda akan menilai dan memilih kebijakan yang tepat?",
+        question: "Lima tersangka (A, B, C, D, E) sedang diinterogasi. Pernyataan mereka adalah:",
         options: [
+            "A mengatakan, 'B berbohong.'",
+            "B mengatakan, 'C yang melakukannya.'",
+            "C mengatakan, 'D berbohong.'",
+            "D mengatakan, 'E berbohong.'",
+            "E mengatakan, 'A berbohong.'",
+            "Pernyataan mereka saling bertentangan"
+        ],
+        correctAnswer: 1 // B
+    }
+    ,
+    {
+        question: "Lima tersangka (A, B, C, D, E) sedang diinterogasi. Pernyataan mereka adalah:",
+        options: [
+            "A mengatakan, 'B pasti tidak berbohong.'",
+            "B mengatakan, 'C tidak melakukan kejahatan.'",
+            "C mengatakan, 'D pasti berbohong.'",
+            "D mengatakan, 'E yang melakukannya.'",
+            "E mengatakan, 'A tidak terlibat.'",
+            "Tidak ada yang jujur di antara mereka."
+        ],
+        correctAnswer: 2 // C
+    }    
+    ,
+    {
+        "question": "Sebagai ilmuwan AI terkemuka, Anda menghadapi pilihan sulit dalam mengembangkan sistem AI untuk kendaraan otonom komersial. Bagaimana Anda memilih langkah berikutnya?",
+        "options": [
+            "Mengembangkan kecerdasan emosional dan sosial AI dengan potensi keuntungan besar",
+            "Memfokuskan pada kecerdasan teknis dengan mengurangi dampak sosial dan etika",
+            "Meninjau ulang pengembangan AI untuk mengevaluasi implikasi etika lebih lanjut",
+            "Mengadakan konferensi ilmiah tentang keberlanjutan AI",
+            "Mendapatkan masukan dari komunitas ilmiah dan etika untuk pengembangan AI yang lebih baik",
+            "Menyelidiki opsi alternatif untuk penggunaan AI di kendaraan otonom"
+        ],
+        "correctAnswer": 0 // Mengembangkan kecerdasan emosional dan sosial AI dengan potensi keuntungan besar
+    }
+    ,
+    {
+        "question": "Sebagai seorang ekonom yang menghadapi resesi mendalam, Anda harus merancang kebijakan fiskal yang tepat. Bagaimana Anda mengevaluasi dan memilih kebijakan yang tepat?",
+        "options": [
             "Meluncurkan stimulus besar-besaran dengan risiko utang negara yang signifikan",
-            "Menerapkan kebijakan penghematan yang ketat untuk menjaga kredibilitas keuangan negara",
-            "Mencari bantuan finansial dari lembaga internasional untuk mengelola krisis ekonomi",
-            "Mengadakan pertemuan dengan pemimpin industri untuk mendiskusikan langkah-langkah pemulihan ekonomi",
-            "Mengumpulkan data ekonomi terbaru untuk memperkuat analisis kebijakan yang akurat"
+            "Menerapkan kebijakan penghematan ketat untuk menjaga kredibilitas keuangan negara",
+            "Mengajukan bantuan finansial dari lembaga internasional untuk mengelola krisis ekonomi",
+            "Mengadakan pertemuan dengan pemimpin industri untuk mendiskusikan langkah pemulihan ekonomi",
+            "Mengumpulkan data ekonomi terbaru untuk analisis kebijakan yang lebih akurat",
+            "Menyusun strategi kolaboratif dengan sektor swasta untuk mengatasi dampak resesi"
         ],
-        correctAnswer: 0 // Meluncurkan stimulus besar-besaran dengan risiko utang negara yang signifikan
-    },
+        "correctAnswer": 0 // Meluncurkan stimulus besar-besaran dengan risiko utang negara yang signifikan
+    }
+    ,
     {
-        question: "Sebagai seorang arsitek terkenal, Anda diberikan tugas untuk merancang bangunan bersejarah yang harus mempertahankan nilai estetika dan keindahan arsitektur klasik tetapi juga harus memenuhi standar keberlanjutan dan efisiensi energi modern. Anda memiliki dua opsi: mengintegrasikan teknologi canggih untuk mencapai efisiensi energi tinggi tetapi mungkin mengorbankan nilai estetika, atau mempertahankan desain klasik yang indah tetapi dengan dampak lingkungan yang lebih besar. Bagaimana Anda akan menyeimbangkan pertimbangan ini dalam merancang bangunan tersebut?",
-        options: [
+        "question": "Sebagai seorang arsitek terkenal, Anda ditugaskan untuk merancang bangunan bersejarah dengan mempertahankan nilai estetika dan memenuhi standar keberlanjutan. Bagaimana Anda menyeimbangkan pertimbangan ini?",
+        "options": [
             "Mengintegrasikan teknologi canggih untuk mencapai efisiensi energi tinggi",
             "Memilih mempertahankan desain klasik yang indah untuk memenuhi standar arsitektur bersejarah",
             "Mengadakan konsultasi dengan arsitek dan insinyur untuk mencari solusi terbaik yang memadukan kedua aspek",
-            "Meninjau ulang desain bangunan untuk memasukkan elemen yang mempertimbangkan aspek keberlanjutan",
-            "Mengorganisir konferensi internasional tentang arsitektur dan keberlanjutan untuk mencari solusi bersama"
+            "Meninjau ulang desain bangunan untuk memasukkan elemen keberlanjutan",
+            "Mengorganisir konferensi internasional tentang arsitektur dan keberlanjutan untuk mencari solusi bersama",
+            "Mempertimbangkan opsi-opsi lain untuk menggabungkan keindahan dan keberlanjutan"
         ],
-        correctAnswer: 2 // Mengadakan konsultasi dengan arsitek dan insinyur untuk mencari solusi terbaik yang memadukan kedua aspek
-    },
-    {
-        question: "Dalam sebuah simulasi bencana, Anda memiliki pilihan untuk menyelamatkan lima orang yang terjebak di bawah reruntuhan atau satu orang yang terperangkap di dalam mobil terbakar. Pilihan mana yang harus Anda ambil untuk memaksimalkan jumlah nyawa yang diselamatkan?",
-        options: ["Lima orang di bawah reruntuhan", "Satu orang di dalam mobil terbakar", "Tidak menyelamatkan siapa pun", "Menyelamatkan kedua kelompok tersebut dengan bantuan tambahan", "Tergantung pada kondisi fisik dan keselamatan pribadi"],
-        correctAnswer: 0 // Lima orang di bawah reruntuhan
-    },
-    {
-        question: "Anda memimpin tim riset yang memiliki dua proyek penting: satu berpotensi untuk menghasilkan keuntungan besar tetapi dengan risiko tinggi, dan satu lagi yang lebih stabil tetapi tidak memiliki potensi keuntungan besar. Bagaimana Anda memilih proyek yang akan diberikan prioritas pertama?",
-        options: ["Proyek berpotensi keuntungan besar dengan risiko tinggi", "Proyek stabil dengan potensi keuntungan kecil", "Keduanya diberikan prioritas yang sama", "Tidak memprioritaskan proyek manapun", "Mengkaji lebih lanjut mengenai kedua proyek"],
-        correctAnswer: 1 // Proyek stabil dengan potensi keuntungan kecil
-    },
-    {
-        question: "Anda diberi kesempatan untuk memilih antara menerima pekerjaan yang menjanjikan gaji tinggi tetapi dengan tekanan kerja yang besar, atau pekerjaan dengan gaji yang lebih rendah tetapi lingkungan kerja yang lebih nyaman. Mana yang akan Anda pilih dan mengapa?",
-        options: ["Pekerjaan dengan gaji tinggi dan tekanan kerja besar", "Pekerjaan dengan gaji rendah dan lingkungan kerja nyaman", "Meminta penawaran pekerjaan yang berbeda", "Menimbang kembali opsi pekerjaan", "Konsultasi dengan orang terdekat"],
-        correctAnswer: 1 // Pekerjaan dengan gaji rendah dan lingkungan kerja nyaman
-    },
-    {
-        question: "Anda bertaruh dalam permainan kartu di mana Anda memiliki dua pilihan: satu kartu memiliki peluang menang yang tinggi tetapi hadiah kecil, sedangkan kartu lainnya memiliki peluang menang rendah tetapi hadiah besar. Bagaimana strategi yang Anda pilih untuk bermain?",
-        options: ["Memilih kartu dengan peluang menang tinggi dan hadiah kecil", "Memilih kartu dengan peluang menang rendah dan hadiah besar", "Tidak bertaruh", "Menunggu peluang yang lebih baik", "Mengurangi risiko dengan tidak bertaruh"],
-        correctAnswer: 1 // Memilih kartu dengan peluang menang rendah dan hadiah besar
-    },
-    {
-        question: "Anda dihadapkan pada dua pilihan: satu adalah menerima tawaran pekerjaan di luar negeri dengan gaji tinggi tetapi jauh dari keluarga, dan satu lagi adalah pekerjaan lokal dengan gaji yang cukup dan dekat dengan keluarga. Bagaimana Anda mengambil keputusan ini?",
-        options: ["Menerima tawaran pekerjaan di luar negeri dengan gaji tinggi", "Menerima pekerjaan lokal dengan gaji cukup", "Tidak menerima tawaran pekerjaan mana pun", "Meminta saran dari ahli karier", "Mencari tahu tentang lebih banyak opsi pekerjaan"],
-        correctAnswer: 1 // Menerima pekerjaan lokal dengan gaji cukup
-    },
-    {
-        question: "Empat tersangka (W, X, Y, Z) sedang diinterogasi. W berkata, 'X yang melakukannya.' X berkata, 'Y yang melakukannya.' Y berkata, 'Z yang melakukannya.' Z berkata, 'W berbohong.' Jika hanya satu dari mereka yang mengatakan kebenaran, siapa yang melakukan kejahatan?",
-        options: ["W", "X", "Y", "Z"],
-        correctAnswer: 1
+        "correctAnswer": 2 // Mengadakan konsultasi dengan arsitek dan insinyur untuk mencari solusi terbaik yang memadukan kedua aspek
     }
+    ,
+    {
+        "question": "Dalam sebuah simulasi bencana, pilihan Anda adalah menyelamatkan lima orang yang terjebak di bawah reruntuhan atau satu orang yang terperangkap di dalam mobil terbakar. Apa yang akan Anda pilih untuk memaksimalkan jumlah nyawa yang diselamatkan?",
+        "options": [
+            "Lima orang di bawah reruntuhan",
+            "Satu orang di dalam mobil terbakar",
+            "Tidak menyelamatkan siapa pun",
+            "Menyelamatkan kedua kelompok dengan bantuan tambahan",
+            "Bergantung pada kondisi fisik dan keselamatan pribadi",
+            "Evaluasi situasi berdasarkan prioritas penanganan medis"
+        ],
+        "correctAnswer": 0 // Lima orang di bawah reruntuhan
+    }
+    ,
+    {
+        "question": "Anda memimpin tim riset dengan dua proyek penting: satu berpotensi menghasilkan keuntungan besar dengan risiko tinggi, dan satu lagi stabil tetapi memiliki potensi keuntungan kecil. Bagaimana Anda memilih proyek yang akan diberikan prioritas pertama?",
+        "options": [
+            "Proyek berpotensi keuntungan besar dengan risiko tinggi",
+            "Proyek stabil dengan potensi keuntungan kecil",
+            "Keduanya diberikan prioritas yang sama",
+            "Tidak memprioritaskan proyek manapun",
+            "Mengkaji lebih lanjut mengenai kedua proyek",
+            "Evaluasi dampak jangka panjang dari masing-masing pilihan"
+        ],
+        "correctAnswer": 1 // Proyek stabil dengan potensi keuntungan kecil
+    }
+    ,
+    {
+        "question": "Anda diberi kesempatan untuk memilih antara menerima pekerjaan dengan gaji tinggi tetapi tekanan kerja yang besar, atau pekerjaan dengan gaji lebih rendah tetapi lingkungan kerja yang lebih nyaman. Mana yang akan Anda pilih dan mengapa?",
+        "options": [
+            "Pekerjaan dengan gaji tinggi dan tekanan kerja besar",
+            "Pekerjaan dengan gaji rendah dan lingkungan kerja nyaman",
+            "Meminta penawaran pekerjaan yang berbeda",
+            "Menimbang kembali opsi pekerjaan",
+            "Konsultasi dengan orang terdekat",
+            "Evaluasi potensi pengembangan karier dari masing-masing opsi"
+        ],
+        "correctAnswer": 1 // Pekerjaan dengan gaji rendah dan lingkungan kerja nyaman
+    }
+    ,
+    {
+        "question": "Anda bertaruh dalam permainan kartu di mana Anda memiliki dua pilihan: satu kartu memiliki peluang menang tinggi tetapi hadiah kecil, sedangkan kartu lainnya memiliki peluang menang rendah tetapi hadiah besar. Bagaimana strategi yang Anda pilih untuk bermain?",
+        "options": [
+            "Memilih kartu dengan peluang menang tinggi dan hadiah kecil",
+            "Memilih kartu dengan peluang menang rendah dan hadiah besar",
+            "Tidak bertaruh",
+            "Menunggu peluang yang lebih baik",
+            "Mengurangi risiko dengan tidak bertaruh",
+            "Melakukan riset untuk memperoleh informasi lebih lanjut tentang kedua kartu"
+        ],
+        "correctAnswer": 1 // Memilih kartu dengan peluang menang rendah dan hadiah besar
+    }
+    ,
+    {
+        "question": "Anda dihadapkan pada dua pilihan: satu adalah menerima tawaran pekerjaan di luar negeri dengan gaji tinggi tetapi jauh dari keluarga, dan satu lagi adalah pekerjaan lokal dengan gaji yang cukup dan dekat dengan keluarga. Bagaimana Anda mengambil keputusan ini?",
+        "options": [
+            "Menerima tawaran pekerjaan di luar negeri dengan gaji tinggi",
+            "Menerima pekerjaan lokal dengan gaji cukup",
+            "Tidak menerima tawaran pekerjaan mana pun",
+            "Meminta saran dari ahli karier",
+            "Mencari tahu tentang lebih banyak opsi pekerjaan",
+            "Meninjau kembali prioritas hidup dan nilai-nilai pribadi untuk mengambil keputusan"
+        ],
+        "correctAnswer": 1 // Menerima pekerjaan lokal dengan gaji cukup
+    },
+    {
+        "question": "Seorang detektif sedang menyelidiki kasus di sebuah apartemen dengan empat orang: Mr. Black, Mr. White, Mr. Green, dan Mr. Blue. Informasi yang dikumpulkan detektif:\n1. Mr. Black di sebelah kiri Mr. White.\n2. Mr. Green tidak di ujung kiri.\n3. Mr. Blue tidak di sebelah kanan Mr. Green.\nDi mana masing-masing orang tinggal?",
+        "options": [
+            "Mr. Black",
+            "Mr. White",
+            "Mr. Green",
+            "Mr. Blue",
+            "Tidak dapat ditentukan",
+            "Informasi tidak mencukupi"
+        ],
+        "correctAnswer": 1 // Mr. White
+    }
+    ,
+    {
+        "question": "Empat tersangka (W, X, Y, Z) sedang diinterogasi. W berkata, 'X yang melakukannya.' X berkata, 'Y yang melakukannya.' Y berkata, 'Z yang melakukannya.' Z berkata, 'W berbohong.' Jika hanya satu dari mereka yang mengatakan kebenaran, siapa yang melakukan kejahatan?",
+        "options": [
+            "W",
+            "X",
+            "Y",
+            "Z",
+            "Pernyataan mereka saling bertentangan",
+            "Tidak dapat dipastikan dari pernyataan yang ada"
+        ],
+        "correctAnswer": 1 // X
+    }
+    
 ];
 
 let currentQuestionIndex = 0;
